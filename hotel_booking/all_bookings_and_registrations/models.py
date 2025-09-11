@@ -85,7 +85,17 @@ class Properties(models.Model):
     title = models.CharField(max_length=255)
     long_description = models.TextField()
     short_description = models.CharField(max_length=255)
-    
+    property_category = models.CharField(max_length=20)
+    address = models.CharField(max_length=200)
+    districtid = models.IntegerField()
+    defaultpictureid = models.CharField(max_length=20)
+    googlemappin = models.CharField(max_length=200)
+    verified = models.CharField(max_length=3)
+    verifiedby = models.CharField(max_length=200)
+    verifiedtimestamp = models.CharField(max_length=200)
+    verifiednotes = models.CharField(max_length=200)
+    enabled = models.CharField(max_length=3)
+    nextverification = models.CharField(max_length=200)
 
     class Meta:
         managed = True

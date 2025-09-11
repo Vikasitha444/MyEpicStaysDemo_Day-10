@@ -17,22 +17,29 @@ from .models import (
 
 def home(request):
   if request.method == 'POST':  
-    first_name = request.POST.get('first_name', '').strip()
-    last_name = request.POST.get('last_name', '').strip()
-    email = request.POST.get('email', '').strip()
-    phone_number = request.POST.get('phone_number', '').strip()
-    password = request.POST.get('password', '')
-    terms = request.POST.get('terms')
-    newsletter = request.POST.get('newsletter')
-
-
-  
+    title = request.POST.get('title', '').strip()
+    short_description = request.POST.get('short_description', '').strip()
+    long_description = request.POST.get('long_description', '').strip()
+    property_category = request.POST.get('property_category', '').strip()
+    address = request.POST.get('address', '').strip()
+    GoogleMapPin = request.POST.get('GoogleMapPin', '').strip()
    
-    new_user = Properties.objects.create(
-        title=email,
-        long_description=make_password(password),  # Hash the password
-        short_description=first_name,
-        
+    new_hotel = Properties.objects.create(
+        title=title,
+        short_description=short_description,
+        long_description=long_description,
+        property_category=property_category,
+        address=address,
+        districtid=1,  # Default district ID; modify as needed
+        defaultpictureid = '1000',  # Default picture ID; modify as needed
+        googlemappin=GoogleMapPin,
+        verified='No',
+        verifiedby='',  
+        verifiedtimestamp='',
+        verifiednotes='',
+        enabled='Yes',
+        nextverification='',
+
     )
     
   

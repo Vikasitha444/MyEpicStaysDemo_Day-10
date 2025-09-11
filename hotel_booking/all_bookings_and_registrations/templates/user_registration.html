@@ -104,7 +104,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>User Registration</h1>
+        <h1>Hotel Registration</h1>
         
         <div id="message" class="message"></div>
         
@@ -114,44 +114,37 @@
             
             
             <div class="form-group">
-                <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required>
+                <label for="title">Property Title:</label>
+                <input type="text" id="title" name="title" required>
             </div>
             
             <div class="form-group">
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required>
+                <label for="short_description">Short Description</label>
+                <input type="text" id="short_description" name="short_description" required>
             </div>
             
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="long_description">Long Description</label>
+                <input type="text" id="long_description" name="long_description" required>
             </div>
             
+             <div class="form-group">
+                <label for="property_category">Property Category</label>
+                <input type="text" id="property_category" name="property_category" required>
+            </div>
+
+             <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone_number" required placeholder="077 123 4567">
+                <label for="GoogleMapPin">Google Map Pin</label>
+                <input type="text" id="GoogleMapPin" name="GoogleMapPin" required>
             </div>
             
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required minlength="6">
-            </div>
             
-            <div class="form-group">
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the Terms and Conditions</label>
-            </div>
-            
-            <div class="checkbox-group">
-                <input type="checkbox" id="newsletter" name="newsletter">
-                <label for="newsletter">Subscribe to newsletter</label>
-            </div>
             
             <input type="hidden" name="action" value="register">
             
