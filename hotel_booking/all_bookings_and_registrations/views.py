@@ -48,8 +48,8 @@ def home(request):
 
 
 
-def user_registration(request):
-  return render(request, 'user_registration.html')
+def hotel_registration(request):
+  return render(request, 'hotel_registration.html')
 
 
 
