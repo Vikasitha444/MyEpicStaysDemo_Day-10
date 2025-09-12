@@ -1,20 +1,5 @@
-Step 01 : Connect Postgres SQL Database
-	1) Goto members/settings.py
-	2) Find the word "DATABASES"
-	3) Replace it with this
-			
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rotary',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': '127.0.0.1',
-        'PORT': '5432'
-    }
-}
+අද මට තියෙන්නේ, Large Scle Project එකක් වෙන, MyEpicStays එක එකේ,  Hotel Registration එකට, Form එකක් හදන්න සහ ඒ දත්ත Secure විදිහට Databse එකට දාන්න.
 
 
 
-Step 02
-	Use the Database as usual.
+මේකට මම, සරල Form එකක් හදාගත්තා. මේ Form එක Hotel එකේ අයිතිකාරයට පුරවන්න තියෙන්නේ. එතකොට, ඒ දත්ත ටික, Postgres SQL Database එකේ ගබඩා වෙනවා.
