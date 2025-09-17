@@ -1,2 +1,5 @@
-අද මට තියෙන්නේ, Large Scle Project එකක් වෙන, MyEpicStays එක එකේ,  Seach Process එක සිදු කරන්න
+අද මට තියෙන්නේ, Large Scle Project එකක් වෙන, MyEpicStays එක එකේ,  Hotel Registration එකට, Form එකක් හදන්න සහ ඒ දත්ත Secure විදිහට Databse එකට දාන්න.
 
+
+
+මේකට මම, සරල Form එකක් හදාගත්තා. මේ Form එක Hotel එකේ අයිතිකාරයට පුරවන්න තියෙන්නේ. එතකොට, ඒ දත්ත ටික, Postgres SQL Database එකේ ගබඩා වෙනවා.
