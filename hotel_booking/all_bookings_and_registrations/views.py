@@ -10,46 +10,44 @@ from django.contrib.auth.hashers import make_password
 from django.utils import timezone
 from django.db import IntegrityError
 from .models import (
-    Teachers, Member, Properties, Users, Districts, 
+    property, Users, Districts, 
     PropertyCategories, PropertyPictures, Excursions,
     PropertyRoomCategories
 )
 
-def home(request):
-  if request.method == 'POST':  
-    title = request.POST.get('title', '').strip()
-    short_description = request.POST.get('short_description', '').strip()
-    long_description = request.POST.get('long_description', '').strip()
-    property_category = request.POST.get('property_category', '').strip()
-    address = request.POST.get('address', '').strip()
-    GoogleMapPin = request.POST.get('GoogleMapPin', '').strip()
-   
-    new_hotel = Properties.objects.create(
-        title=title,
-        short_description=short_description,
-        long_description=long_description,
-        property_category=property_category,
-        address=address,
-        districtid=1,  # Default district ID; modify as needed
-        defaultpictureid = '1000',  # Default picture ID; modify as needed
-        googlemappin=GoogleMapPin,
-        verified='No',
-        verifiedby='',  
-        verifiedtimestamp='',
-        verifiednotes='',
-        enabled='Yes',
-        nextverification='',
 
-    )
-    
-  
+
+
+def home(request):
   return render(request, 'home.html')
 
 
 
 
-def hotel_registration(request):
-  return render(request, 'hotel_registration.html')
+def results(request):
+  if request.method == 'POST':  
+      destination = request.POST.get('destination', '').strip()
+      startDate = request.POST.get('startDate', '').strip()
+      endDate = request.POST.get('endDate', '').strip()
+      guests = request.POST.get('guests', '').strip()
+     
+      all_properties  = property.objects.all()
+      properties_forignkeys = property.objects.select_related('districtid').all()
+
+      context = {
+          'destination': destination,
+          'startDate': startDate,
+          'endDate': endDate,
+          'guests': guests,
+          'all_propoties': all_properties,
+          'properties_forignkeys': properties_forignkeys,}
+  
+      return render(request, 'results.html',context)
+    
+
+
+
+
 
 
 

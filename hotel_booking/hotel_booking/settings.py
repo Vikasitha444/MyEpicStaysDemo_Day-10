@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'hotel_booking.wsgi.application'  # Changed from 'my_tennis_c
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MyEpicStaysDemoDB_2',
+        'NAME': 'MyEpicStaysDemoDB_3',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': '127.0.0.1',

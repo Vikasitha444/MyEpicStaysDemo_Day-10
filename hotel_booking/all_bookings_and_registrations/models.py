@@ -12,7 +12,7 @@ class AwardAuthorities(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True  # Don't let Django manage this existing table
+        managed = False  # Don't let Django manage this existing table
         db_table = 'award_authorities'
 
 class Districts(models.Model):
@@ -22,7 +22,7 @@ class Districts(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'districts'
 
 class ExcursionMedia(models.Model):
@@ -36,7 +36,7 @@ class ExcursionMedia(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'excursion_media'
 
 class Excursions(models.Model):
@@ -52,7 +52,7 @@ class Excursions(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'excursions'
 
 class Icons(models.Model):
@@ -64,28 +64,28 @@ class Icons(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'icons'
 
-class Notifications(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    message = models.TextField()
-    notification_type = models.CharField(max_length=255)
-    target_user = models.CharField(max_length=255)
-    is_read = models.BooleanField()
-    created_at = models.DateTimeField()
-    read_at = models.DateTimeField()
+# class Notifications(models.Model):
+#     id = models.BigAutoField(primary_key=True)
+#     message = models.TextField()
+#     notification_type = models.CharField(max_length=255)
+#     target_user = models.CharField(max_length=255)
+#     is_read = models.BooleanField()
+#     created_at = models.DateTimeField()
+#     read_at = models.DateTimeField()
 
-    class Meta:
-        managed = True
-        db_table = 'notifications'
+#     class Meta:
+#         managed = False
+#         db_table = 'notifications'
 
-class Properties(models.Model):
-    id = models.BigAutoField(primary_key=True)
+class property(models.Model):
+    propertyid = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=255)
-    long_description = models.TextField()
-    short_description = models.CharField(max_length=255)
-    property_category = models.CharField(max_length=20)
+    longdescription = models.TextField()
+    shortdescription = models.CharField(max_length=255)
+    propertycategory = models.CharField(max_length=20)
     address = models.CharField(max_length=200)
     districtid = models.IntegerField()
     defaultpictureid = models.CharField(max_length=20)
@@ -98,8 +98,8 @@ class Properties(models.Model):
     nextverification = models.CharField(max_length=200)
 
     class Meta:
-        managed = True
-        db_table = 'properties'
+        managed = False
+        db_table = 'property'
 
 class PropertyAwards(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -111,7 +111,7 @@ class PropertyAwards(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_awards'
 
 class PropertyCategories(models.Model):
@@ -123,7 +123,7 @@ class PropertyCategories(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_categories'
 
 class PropertyFacilities(models.Model):
@@ -137,7 +137,7 @@ class PropertyFacilities(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_facilities'
 
 class PropertyPictures(models.Model):
@@ -151,7 +151,7 @@ class PropertyPictures(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_pictures'
 
 class PropertyRestrictions(models.Model):
@@ -162,7 +162,7 @@ class PropertyRestrictions(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_restrictions'
 
 class PropertyRoomCategories(models.Model):
@@ -178,7 +178,7 @@ class PropertyRoomCategories(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_room_categories'
 
 class PropertyRoomCategoryFeatures(models.Model):
@@ -189,7 +189,7 @@ class PropertyRoomCategoryFeatures(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'property_room_category_features'
 
 class Restrictions(models.Model):
@@ -201,7 +201,7 @@ class Restrictions(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'restrictions'
 
 class SystemConfiguration(models.Model):
@@ -215,7 +215,7 @@ class SystemConfiguration(models.Model):
     updated_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'system_configuration'
 
 class Users(models.Model):
@@ -229,7 +229,7 @@ class Users(models.Model):
     last_login_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'users'
 
 class UserSessions(models.Model):
@@ -241,7 +241,7 @@ class UserSessions(models.Model):
     is_active = models.BooleanField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'user_sessions'
 
 class VerificationDetails(models.Model):
@@ -255,7 +255,7 @@ class VerificationDetails(models.Model):
     created_at = models.DateTimeField()
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'verification_details'
 
 # Your new Teachers model that will create a new table
@@ -272,7 +272,7 @@ class Teachers(models.Model):
 
     class Meta:
         verbose_name_plural = "Teachers"
-        managed = True  # Django can manage this table
+        managed = False  # Django can manage this table
         db_table = 'teachers'
 
 # Keep your existing Member model (from old database)
@@ -284,5 +284,5 @@ class Member(models.Model):
         return f"{self.firstname} {self.lastname}"
     
     class Meta:
-        managed = True  # Reference to existing table
+        managed = False  # Reference to existing table
         db_table = 'members_member'
